@@ -7,4 +7,6 @@ cat_cols = ['category', 'card_type', 'card_company', 'city', 'browser_version', 
 def predict_df(df):
     for col in cat_cols:
         df[col] = df[col].astype(object)
+    if "timestamp" in df:
+      del df["timestamp"]
     return mod.predict_proba(df.fillna(0))[:,1]
