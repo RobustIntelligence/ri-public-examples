@@ -1,0 +1,13 @@
+{
+    "run_name": "Income",
+    "data_info": {
+        "pred_col": "pred",
+        "label_col": "income",
+        "ref_path": "ref_with_preds.csv",
+        "eval_path": "eval_with_preds.csv"
+    },
+    "model_info": {
+        "path": "model/model.py"
+    },
+    "model_task":"Binary Classification"
+}

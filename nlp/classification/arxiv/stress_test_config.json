@@ -1,0 +1,14 @@
+{
+    "run_name": "ArXiv Topic Classification",
+    "data_info": {
+        "ref_path": "data/train.json.gz",
+        "eval_path": "data/val_0_with_label.json.gz"
+    },
+    "prediction_info": {
+        "ref_path": "data/train_preds.json.gz",
+        "eval_path": "data/val_preds_0.json.gz"
+    },
+    "model_task": "Text Classification",
+    "random_seed": 42,
+    "tests_config_path": "tests_config.json"
+}
