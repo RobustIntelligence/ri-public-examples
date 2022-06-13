@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # check that output directory is supplied
-if [[ $1 -eq 0 ]] ; then
+if [[ $# -eq 0 ]] ; then
     echo 'Must specify output directory e.g. `./download_files.sh <output_dir>`'
     exit 1
 fi
