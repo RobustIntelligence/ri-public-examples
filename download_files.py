@@ -37,13 +37,13 @@ def _download_files(urls_and_outpaths: List[Tuple[str, str]], parent_dir: Path) 
 def download_files(project_dir: Path) -> None:
     """Download files from external URL's."""
     # load in URL's and output paths
-    data_urls_and_outpaths = _fetch_urls_and_outpaths(project_dir / "data_urls.txt")
-    model_urls_and_outpaths = _fetch_urls_and_outpaths(project_dir / "model_urls.txt")
+    data_urls_and_outpaths = _fetch_urls_and_outpaths(project_dir / "data_urls.csv")
+    model_urls_and_outpaths = _fetch_urls_and_outpaths(project_dir / "model_urls.csv")
 
     # download files
     _download_files(data_urls_and_outpaths, project_dir / "data")
     _download_files(model_urls_and_outpaths, project_dir / "models")
-    
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -52,4 +52,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     download_files(Path(args.project_dir))
-    
+
