@@ -31,7 +31,7 @@ def _download_files(urls_and_outpaths: List[Tuple[str, str]], parent_dir: Path) 
         outdir = full_outpath.parent
         if not outdir.exists():
             os.makedirs(outdir)
-        subprocess.call(["wget", url, "-O", full_outpath])
+        subprocess.run(["wget", url, "-O", full_outpath])
 
 
 def download_files(project_dir: Path) -> None:
