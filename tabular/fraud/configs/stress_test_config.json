@@ -1,0 +1,13 @@
+{
+    "run_name": "Fraud",
+    "data_info": {
+        "pred_col": "preds",
+        "label_col": "label",
+        "ref_path": "fraud_ref.csv",
+        "eval_path": "fraud_eval.csv"
+    },
+    "model_info": {
+        "path": "Models/fraud_model.py"
+    },
+    "model_task":"Binary Classification"
+}

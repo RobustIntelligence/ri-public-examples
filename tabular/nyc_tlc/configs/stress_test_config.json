@@ -1,0 +1,13 @@
+{
+    "run_name": "NYC TLC",
+    "data_info": {
+        "pred_col": "Prediction",
+        "label_col": "TripDuration",
+        "ref_path": "ref.csv",
+        "eval_path": "eval.csv"
+    },
+    "model_info": {
+        "path": "model/model.py"
+    },
+    "model_task":"Regression"
+}

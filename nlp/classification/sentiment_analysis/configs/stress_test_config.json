@@ -1,0 +1,31 @@
+{
+    "run_name": "Sentiment Analysis (Twitter Airline)",
+    "data_info": {
+        "ref_path": "data/train.json",
+        "eval_path": "data/test.json"
+    },
+    "model_info": {
+        "path": "models/twitter-roberta-base-sentiment.py"
+    },
+    "model_task": "Text Classification",
+    "prediction_info": {
+        "ref_path": "data/train_preds.json",
+        "eval_path": "data/test_preds.json"
+    },
+    "data_profiling_info": {
+        "class_names": [
+            "negative",
+            "neutral",
+            "positive"
+        ],
+        "custom_numeric_metadata": [
+            "Retweet_count"
+        ],
+        "custom_categorical_metadata": [
+            "Reason",
+            "Airline",
+            "Location"
+        ]
+    },
+    "random_seed": 42
+}
