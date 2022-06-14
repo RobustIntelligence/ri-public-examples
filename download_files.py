@@ -12,7 +12,10 @@ def _fetch_urls_and_outpaths(file_path: Path) -> List[Tuple[str, str]]:
         for line in fp:
             tokens = tuple([t.strip() for t in line.split(',')])
             if len(tokens) != 2:
-                raise Exception("Incorrect l")
+                raise Exception(
+                    "Number of comma-separated values should be 2. "
+                    f"Actual: {len(tokens)}"
+                )
 
             urls_and_outpaths.append(tokens)
     return urls_and_outpaths
