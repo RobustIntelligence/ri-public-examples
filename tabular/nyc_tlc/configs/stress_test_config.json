@@ -3,11 +3,11 @@
     "data_info": {
         "pred_col": "Prediction",
         "label_col": "TripDuration",
-        "ref_path": "ref.csv",
-        "eval_path": "eval.csv"
+        "ref_path": "data/ref.csv",
+        "eval_path": "data/eval.csv"
     },
     "model_info": {
-        "path": "model/model.py"
+        "path": "models/model.py"
     },
     "model_task":"Regression"
 }
