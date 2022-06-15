@@ -3,11 +3,11 @@
     "data_info": {
         "pred_col": "pred",
         "label_col": "income",
-        "ref_path": "ref_with_preds.csv",
-        "eval_path": "eval_with_preds.csv"
+        "ref_path": "data/ref_with_preds.csv",
+        "eval_path": "data/eval_with_preds.csv"
     },
     "model_info": {
-        "path": "model/model.py"
+        "path": "models/model.py"
     },
     "model_task":"Binary Classification"
 }
