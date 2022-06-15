@@ -1,0 +1,20 @@
+{
+    "horizontal_flip": {
+        "sample_size": 20
+    },
+    "vertical_flip": {
+        "sample_size": 20
+    },
+    "gaussian_blur": {
+        "sample_size": 20
+    },
+    "color_jitter": {
+        "sample_size": 20
+    },
+    "randomize_pixels_with_mask": {
+        "sample_size": 20
+    },
+    "gaussian_noise": {
+        "sample_size": 20
+    }
+}
