@@ -36,13 +36,6 @@ def _download_files(urls_and_outpaths: List[Tuple[str, Path]], parent_dir: Path)
         if outpath.suffix == ".zip":
             # unzip in parent directory
             subprocess.run(["unzip", "-o", full_outpath, "-d", outdir])
-            # assert that the unzipped directory has same name as .zip file
-            full_outpath_unzip = outdir / (outpath.stem)
-            if not full_outpath_unzip.exists():
-                raise Exception(
-                    "The unzipped directory must exist at following output path: "
-                    f"{full_outpath_unzip}. Original zip path: {full_outpath}."
-                )
 
 
 def download_files(project_dir: Path) -> None:
