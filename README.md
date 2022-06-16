@@ -22,8 +22,18 @@ This is based on public NYC Taxi and Limousine Commission data (https://www1.nyc
 
 ### Classification
 
-#### 1. Arxiv (`nlp/classification/arxiv/`)
-TODO
+#### 1. ArXiv (`nlp/classification/arxiv/`)
+This is based on the [public ArXiv dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv?select=arxiv-metadata-oai-snapshot.json).
+This directory contains an NLP topic classification model, reference set, evaluation set, and test sets representing production data.
 
 #### 2. Twitter Sentiment Analysis (`nlp/classification/sentiment_analysis/`)
-TODO
+This is based on the [CARER Emotion Recognition dataset](https://github.com/dair-ai/emotion_dataset).
+This directory contains a RoBERTA-based model trained on tweets and used for sentiment analysis. It also contains the reference set and test sets.
+
+## Computer Vision
+
+### Classification
+
+#### 1. Animals with Attributes 2 (`images/classification/awa2`)
+This is based on the [Animals with Attributes dataset](https://cvml.ist.ac.at/AwA2/).
+This directory contains an image classification model, a reference and evaluation set for stress testing, as well as a test set representing production data.

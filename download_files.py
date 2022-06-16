@@ -5,23 +5,23 @@ from typing import List, Tuple
 from pathlib import Path
 
 
-def _fetch_urls_and_outpaths(file_path: Path) -> List[Tuple[str, str]]:
+def _fetch_urls_and_outpaths(file_path: Path) -> List[Tuple[str, Path]]:
     """Fetch urls and output paths from text file."""
     urls_and_outpaths = []
     with open(file_path, "r") as fp:
         for line in fp:
-            tokens = tuple([t.strip() for t in line.split(',')])
+            tokens = [t.strip() for t in line.split(',')]
             if len(tokens) != 2:
                 raise Exception(
                     "Number of comma-separated values should be 2. "
                     f"Actual: {len(tokens)}"
                 )
 
-            urls_and_outpaths.append(tokens)
+            urls_and_outpaths.append((tokens[0], Path(tokens[1])))
     return urls_and_outpaths
 
 
-def _download_files(urls_and_outpaths: List[Tuple[str, str]], parent_dir: Path) -> None:
+def _download_files(urls_and_outpaths: List[Tuple[str, Path]], parent_dir: Path) -> None:
     """Download files."""
     if not parent_dir.exists():
         os.makedirs(parent_dir)
@@ -32,6 +32,10 @@ def _download_files(urls_and_outpaths: List[Tuple[str, str]], parent_dir: Path) 
         if not outdir.exists():
             os.makedirs(outdir)
         subprocess.run(["wget", url, "-O", full_outpath])
+        # if downloading a zip file, unzip
+        if outpath.suffix == ".zip":
+            # unzip in parent directory
+            subprocess.run(["unzip", "-o", full_outpath, "-d", outdir])
 
 
 def download_files(project_dir: Path) -> None:
