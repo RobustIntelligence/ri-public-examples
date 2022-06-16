@@ -4,9 +4,12 @@
         "ref_path": "data/train.json.gz",
         "eval_path": "data/val_0_with_label.json.gz"
     },
+    "model_info": {
+        "path": "models/bert-base-arxiv.py"
+    },
     "prediction_info": {
-        "ref_path": "data/train_preds.json.gz",
-        "eval_path": "data/val_preds_0.json.gz"
+        "ref_path": "data/preds.train.jsonl.gz",
+        "eval_path": "data/preds.val_0.jsonl.gz"
     },
     "model_task": "Text Classification",
     "random_seed": 42,
