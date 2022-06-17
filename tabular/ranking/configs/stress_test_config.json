@@ -4,7 +4,7 @@
     "label_col": "rank_label",
     "pred_col": "pred",
     "ref_path": data/ref.csv,
-    "eval_path": data/ref.csv,
+    "eval_path": data/eval.csv,
     "ranking_info": {
       "query_col": "query_id"
     }
