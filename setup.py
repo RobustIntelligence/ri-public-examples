@@ -13,5 +13,6 @@ setup(
     long_description_content_type="text/markdown",
     setuptools_git_versioning={"enabled": True},
     setup_requires=["setuptools-git-versioning"],
+    install_requires=["requests"],
     python_requires=">=3.6",
 )
