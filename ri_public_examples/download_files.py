@@ -64,16 +64,3 @@ def download_files(project_dir: str, out_dir: Optional[str] = None) -> None:
     # download files
     _download_files(data_urls_and_outpaths, out_dir / "data")
     _download_files(model_urls_and_outpaths, out_dir / "models")
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--project-dir", help="Path to project directory", required=True, type=str,
-    )
-    parser.add_argument(
-        "--out-dir", help="Output download path", default=None, type=str,
-    )
-    args = parser.parse_args()
-    download_files(args.project_dir, out_dir=args.out_dir)
-
