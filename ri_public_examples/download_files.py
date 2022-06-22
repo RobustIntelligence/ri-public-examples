@@ -45,7 +45,6 @@ def _download_files(
     if not out_dir.exists():
         os.makedirs(out_dir)
     for url, outpath in urls_and_outpaths:
-        print((url, outpath))
         # if subfolders are specified, create those subfolders
         full_outpath = out_dir / outpath
         out_zip_dir = full_outpath.parent
