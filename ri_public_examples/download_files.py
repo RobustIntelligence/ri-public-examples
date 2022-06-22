@@ -1,7 +1,7 @@
 import os
 import argparse
-import subprocess
 from typing import List, Optional, Tuple
+from zipfile import ZipFile
 from pathlib import Path
 import requests
 
@@ -45,14 +45,16 @@ def _download_files(
     if not out_dir.exists():
         os.makedirs(out_dir)
     for url, outpath in urls_and_outpaths:
+        print((url, outpath))
         # if subfolders are specified, create those subfolders
         full_outpath = out_dir / outpath
         out_zip_dir = full_outpath.parent
         _download_file(url, full_outpath)
         # if downloading a zip file, unzip
         if outpath.suffix == ".zip":
-            # unzip in parent directory
-            subprocess.run(["unzip", "-o", full_outpath, "-d", out_zip_dir])
+            zf = ZipFile(full_outpath, 'r')
+            zf.extractall(out_zip_dir)
+            zf.close()
 
 
 def _download_configs(
