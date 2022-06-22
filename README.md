@@ -2,10 +2,13 @@
 
 This repository tracks sample datasets and models. Due to size constraints, the actual data and model files are stored externally.
 
-To pull the data and model(s) for a specific example, run the `download_files.py` script like so:
-```bash
-python download_files.py --project-dir tabular/nyc_tlc # downloads the NYC TLC example
+This repository can be installed as a pip package (e.g. `pip install -e git+https://github.com/RobustIntelligence/ri-public-examples.git`). 
+To pull the data and model(s) for a specific example, run the following module script as follows from within the top-level directory:
+```python
+from ri_public_examples.download_files import download_files
+download_files('tabular/nyc_tlc', 'nyc_tlc')
 ```
+This will download the NYC TLC datasets/models/configs.
 
 ## Tabular
 
