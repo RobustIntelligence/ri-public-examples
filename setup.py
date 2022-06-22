@@ -11,7 +11,6 @@ setup(
     description="Package to download datasets/models/configs for use in RIME",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    # TODO(blaine): upgrade to semver 3 when it is released.
     setuptools_git_versioning={"enabled": True},
     setup_requires=["setuptools-git-versioning"],
     python_requires=">=3.6",
