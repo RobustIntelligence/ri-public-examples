@@ -12,6 +12,8 @@ DEFAULT_CONFIG_PATH = "configs/stress_test_config.json"
 
 def _download_file(remote_path: str, local_path: Path) -> None:
     """Downloads file to local path."""
+    if not local_path.parent.exists():
+        local_path.parent.mkdir(parents=True)
     r = requests.get(remote_path)
     with open(local_path, 'wb') as f:
         f.write(r.content)
