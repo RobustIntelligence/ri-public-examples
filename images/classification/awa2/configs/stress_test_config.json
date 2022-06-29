@@ -12,5 +12,5 @@
         "path": "models/awa2_cpu.py"
     },
     "model_task": "Image Classification",
-    "tests_config_path": "fast_test_config.json"
+    "tests_config_path": "configs/test_config.json"
 }
