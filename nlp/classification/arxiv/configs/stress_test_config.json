@@ -13,5 +13,5 @@
     },
     "model_task": "Text Classification",
     "random_seed": 42,
-    "tests_config_path": "tests_config.json"
+    "tests_config_path": "configs/test_config.json"
 }
