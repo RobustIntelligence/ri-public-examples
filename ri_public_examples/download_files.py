@@ -4,6 +4,9 @@ from typing import List, Optional, Tuple
 from zipfile import ZipFile
 from pathlib import Path
 import requests
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 GITHUB_URL = "https://raw.githubusercontent.com/RobustIntelligence/ri-public-examples/master/"
@@ -11,14 +14,18 @@ DEFAULT_CONFIG_PATH = "configs/stress_test_config.json"
 
 
 def _download_file(remote_path: str, local_path: Path) -> int:
-    """Downloads file to local path."""
+    """Downloads file to local path and returns status code of request.."""
     if not local_path.parent.exists():
         local_path.parent.mkdir(parents=True)
     r = requests.get(remote_path)
     if r.status_code == 200:
         with open(local_path, 'wb') as f:
             f.write(r.content)
-    
+    else:
+        logger.warning(
+            f"Invalid status code: {r.status_code} for request {remote_path}"
+        )
+
     return r.status_code
 
 def _fetch_urls_and_outpaths(
@@ -28,11 +35,11 @@ def _fetch_urls_and_outpaths(
     # TODO: add data_urls/configs to package data directly
     # first download remote file path
     local_path = out_dir / Path(remote_file_path).name
-    
+
     status_code = _download_file(remote_file_path, local_path)
     if status_code != 200:
         return None
-    
+
     urls_and_outpaths = []
     with open(local_path, "r") as fp:
         for line in fp:
