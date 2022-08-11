@@ -1,0 +1,20 @@
+{
+    "data_info": {
+        "ref_path": "data/ref_with_preds.csv",
+        "eval_path": "data/eval_with_preds_with_timestamps.csv",
+        "label_col": "loan_status",
+        "pred_col": "pred",
+        "protected_features": ["sex", "race", "addr_state"],
+        "features_not_in_model": ["sex", "race"]
+    },
+    "model_task": "Binary Classification",
+    "silent_errors": false,
+    "model_info": {
+        "path": "models/model.py"
+    },
+    "run_name": "Loan Default Prediction - Lending Club",
+    "test_config": {
+        "categories": ["Compliance"],
+        "run_default": true
+    }
+}
