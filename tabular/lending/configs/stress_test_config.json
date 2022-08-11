@@ -1,7 +1,7 @@
 {
     "data_info": {
         "ref_path": "data/ref_with_preds.csv",
-        "eval_path": "data/eval_with_preds_with_timestamps.csv",
+        "eval_path": "data/eval_with_preds.csv",
         "label_col": "loan_status",
         "pred_col": "pred",
         "protected_features": ["sex", "race", "addr_state"],
