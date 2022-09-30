@@ -2,7 +2,10 @@
     "run_name": "ArXiv Topic Classification",
     "data_info": {
         "ref_path": "data/train.json.gz",
-        "eval_path": "data/val_0_with_label.json.gz"
+        "eval_path": "data/val_0_with_label.json.gz",
+        "embeddings": [
+            {"key": "sentence_embedding"}
+        ]
     },
     "model_info": {
         "path": "models/bert-base-arxiv.py"
