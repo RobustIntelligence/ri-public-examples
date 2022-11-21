@@ -14,7 +14,7 @@
     },
     "run_name": "Loan Default Prediction - Lending Club",
     "test_config": {
-        "categories": ["Compliance"],
+        "categories": ["Bias and Fairness"],
         "run_default": true
     }
 }
