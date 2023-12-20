@@ -9,7 +9,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-GITHUB_URL = "https://raw.githubusercontent.com/RobustIntelligence/ri-public-examples/massimo/update-lending-models-urls/"
+GITHUB_URL = "https://raw.githubusercontent.com/RobustIntelligence/ri-public-examples/419c58dcbe308a0f6d25415a7ab5351608bca41b/"
 DEFAULT_CONFIG_PATH = "configs/stress_test_config.json"
 
 
